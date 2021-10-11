@@ -8,10 +8,27 @@
     <link rel="stylesheet" href="../public/skeleton.css">
     <title>Index</title>
 </head>
+<% budgets.forEach(budget=> {bankAccount += budget.amount}) %>
+<% if(bankAccount < 0 ){ %>
+    <style>
+        body{
+            background-color: red;
+        }
+    </style>
+<% } %>
+<% if(bankAccount > 0 ){ %>
+    <style>
+        body {
+            background-color: green;
+        }
+    </style>
+<% } %>
+
 <body>
     <div class="container">
         <button onclick="window.location.href='/budgets/new'">New</button>
         <h1>Budgtr ALL</h1>
+        <h2>bankAccount: <%= bankAccount %></h1>
         <table>
             <% for(let i = 0; i < budgets.length; i++) {%>
             <tr>

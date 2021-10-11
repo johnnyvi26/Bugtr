@@ -21,6 +21,7 @@ app.use(express.static('public'));
 app.get('/budgets', (req, res)=>{
     res.render('index.ejs', {
         budgets: Budget,
+        bankAccount: 0,
     });
 });
 
