@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../public/skeleton.css">
     <title>Index</title>
 </head>
-<% budgets.forEach(budget=> {bankAccount += budget.amount}) %>
+<% budgets.forEach(budget=> {bankAccount += Number(budget.amount)}) %>
 <% if(bankAccount < 0 ){ %>
     <style>
         body{
