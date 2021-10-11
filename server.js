@@ -26,13 +26,14 @@ app.get('/budgets', (req, res)=>{
 
 // NEW
 app.get('/budgets/new', (req, res) => {
-    res.send("");
+    res.render('new.ejs');
 });
 
 // CREATE
 
 app.post('/budgets', (req, res) => {
-    res.send("");
+    Budget.push(req.body);
+    res.redirect("/budgets");
 });
 
 // SHOW
